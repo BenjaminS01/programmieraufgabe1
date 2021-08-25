@@ -1,0 +1,78 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  
+    <link rel="stylesheet" href="weatherApp.css">
+    <title>Weather App</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+    <body>
+      <nav class="navbar navbar-dark bg-primary">
+		<h1>Aktuelle Wetterinformationen</h1>
+	</nav>
+
+<div class="box">
+	<h2>Stadtnamen eingeben</h2>
+
+	<div class="form-group row">
+			<input id="q" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="q">
+			<button id="start" class="btn btn-success mb-3" onclick="abc()">Stadt suchen</button>
+	</div>
+
+<div class="weather">	
+	<h3 id="city">-</h3>
+
+
+<table class="table">
+  
+  <tbody>
+    <tr>
+      <td >Temperatur:</td>
+      <td id="temperatur"></td>
+    </tr>
+	<tr>
+		<td >Luftdruck</td>
+		<td id="luftdruck"></td>
+	  </tr>
+	  <tr>
+		<td>Feuchtigkeit:</td>
+		<td id="feuchtigkeit"></td></td>
+	  </tr>
+	  <tr>
+		<td>Geringste Temperatur:</td>
+		<td id="geringsteTemp"></td>
+	  </tr>
+	  <tr>
+		<td>Höchste Temperatur</td>
+		<td id="höchsteTemp"></td>
+	  </tr>
+	  <tr>
+		<td>Windgeschwindigkeit</td>
+		<td id="windgeschw"></td>
+	  </tr>
+	  <tr>
+		<td>Windrichtung</td>
+		<td id="windr"></td>
+	  </tr>
+	  <tr>
+		<td>Schnee???</td>
+		<td id="luftdruck"></td>
+	  </tr>
+  </tbody>
+</table>
+</div>
+
+</div>	
+
+</div>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	  <script src="weatherApp.js"></script>
+
+    </body>
+</html>
