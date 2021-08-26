@@ -15,7 +15,7 @@ function abc(){
     };
 
     function setTextfields(data){
-        $("#city").html("Wetterdaten: "+$("#q").val());
+        $("#city").html("Wetterdaten: "+data.name);
 
         $("#temperatur").html(data.main.temp + "°C");
         $("#luftdruck").html(data.main.pressure + " hPa");
@@ -24,7 +24,8 @@ function abc(){
         $("#höchsteTemp").html(data.main.temp_max + "°C");
         $("#windgeschw").html(data.wind.speed + " m/s");
         $("#windr").html(data.wind.deg + "°");
-        $("#logo").html(data.weather[0].icon);
+		$("#logo").html(data.weather[0].icon);
+        $("#beschreibung").html(data.weather[0].description);
 
         $(".weather").css("display", "block");
     }
