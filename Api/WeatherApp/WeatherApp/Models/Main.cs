@@ -10,6 +10,7 @@ namespace WeatherApp.Models
     public class Main
     {
         [Key]
+        [ForeignKey("Place")]
         public int id { get; set; }
 
         [Range(-100, 100)]
@@ -34,7 +35,12 @@ namespace WeatherApp.Models
         [Column(TypeName = "decimal(5, 2)")]
         public float temp_min { get; set; }
 
-        public virtual Place place { get; set; }
+        public int placeId { get; set; }
+        public Place place { get; set; }
+
+        
+        
+
 
     }
 }
