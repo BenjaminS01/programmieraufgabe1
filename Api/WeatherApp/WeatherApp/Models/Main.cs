@@ -15,7 +15,7 @@ namespace WeatherApp.Models
 
         [Range(-100, 100)]
         [Column(TypeName = "decimal(5, 2)")]
-        public float feels_like { get; set; }
+        public double feels_like { get; set; }
 
         [Range(0, 100)]
         public int humidity { get; set; }
@@ -25,15 +25,15 @@ namespace WeatherApp.Models
 
         [Range(-100, 100)]
         [Column(TypeName = "decimal(5, 2)")]
-        public float temp { get; set; }
+        public double temp { get; set; }
 
         [Range(-100, 100)]
         [Column(TypeName = "decimal(5, 2)")]
-        public float temp_max { get; set; }
+        public double temp_max { get; set; }
 
         [Range(-100, 100)]
         [Column(TypeName = "decimal(5, 2)")]
-        public float temp_min { get; set; }
+        public double temp_min { get; set; }
 
         public int placeId { get; set; }
         public Place place { get; set; }

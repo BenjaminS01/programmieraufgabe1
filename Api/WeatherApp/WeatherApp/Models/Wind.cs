@@ -17,7 +17,7 @@ namespace WeatherApp.Models
         public int deg { get; set; }
 
         [Column(TypeName = "decimal(5, 2)")]
-        public float speed { get; set; }
+        public double speed { get; set; }
 
         public int placeId { get; set; }
         public Place place { get; set; }

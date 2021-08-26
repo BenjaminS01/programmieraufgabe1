@@ -12,11 +12,18 @@ namespace WeatherApp
     {
         public static MapperConfiguration RegisterMaps()
         {
-            var config = new MapperConfiguration(cfg => 
-            cfg.CreateMap<Place, PlaceDto>());
-            return config;
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Place, PlaceDto>();
+                cfg.CreateMap<Coord, CoordDto>();
+                cfg.CreateMap<Weather, WeatherDto>();
+                cfg.CreateMap<Wind, WindDto>();
+                cfg.CreateMap<Main, MainDto>();
+            });
+
+           return config;
         }
     }
        
-    }
+    
 }

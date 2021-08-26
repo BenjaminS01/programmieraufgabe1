@@ -14,10 +14,10 @@ namespace WeatherApp.Models
 
         [Range(0, 360)]
         [Column(TypeName = "decimal(7, 4)")]
-        public float lat { get; set; }
+        public double lat { get; set; }
 
         [Column(TypeName = "decimal(7, 4)")]
-        public float lon { get; set; }
+        public double lon { get; set; }
 
 
     }

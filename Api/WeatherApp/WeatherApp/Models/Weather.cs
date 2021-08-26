@@ -21,6 +21,7 @@ namespace WeatherApp.Models
         [Column(TypeName = "varchar(100)")]
         public string main { get; set; }
 
+
     }
 
 }
