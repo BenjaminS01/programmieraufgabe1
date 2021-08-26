@@ -8,6 +8,6 @@ namespace WeatherApp.Repository
 {
     public interface IPlaceRepository
     {
-        Task<PlaceDto> GetPlaceByName(string placetName);
+        Task<PlaceDto> GetPlaceByName(string placeName);
     }
 }
