@@ -62,3 +62,6 @@ C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\obj\Debug\net5.0\
 C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\obj\Debug\net5.0\ref\WeatherApp.dll
 C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\obj\Debug\net5.0\WeatherApp.pdb
 C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\obj\Debug\net5.0\WeatherApp.genruntimeconfig.cache
+C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\bin\Debug\net5.0\System.Net.Http.Formatting.dll
+C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\bin\Debug\net5.0\System.Web.Http.dll
+C:\Users\bswar\Desktop\Projekte\ntag\Api\WeatherApp\WeatherApp\bin\Debug\net5.0\Newtonsoft.Json.Bson.dll

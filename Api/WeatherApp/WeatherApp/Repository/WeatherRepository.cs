@@ -22,9 +22,9 @@ namespace WeatherApp.Repository
             _mapper = mapper;
         }
 
-        public async Task<WeatherDto> GetWeatherByPlaceId(int placeId)
+        public async Task<WeatherDto> GetWeatherById(int id)
         {
-            Weather weather = await _db.weather.Where(x => x.id == placeId).FirstOrDefaultAsync();
+            Weather weather = await _db.weather.Where(x => x.id == id).FirstOrDefaultAsync();
             return _mapper.Map<WeatherDto>(weather);
         }
     }

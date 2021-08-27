@@ -13,5 +13,7 @@ namespace WeatherApp.Models.Dto
 
         public Main main { get; set; }
 
+        public int weatherId { get; set; }
+
     }
 }

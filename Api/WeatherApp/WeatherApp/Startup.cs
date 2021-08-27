@@ -46,10 +46,22 @@ namespace WeatherApp
             services.AddSingleton(mapper);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
+            //No 'Access-Control-Allow-Origin'
+            services.AddCors(options =>
+            {
+                options.AddPolicy("_myAllowSpecificOrigins",
+                    builder => builder
+                    .AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader());
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WeatherApp", Version = "v1" });
             });
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -72,6 +84,11 @@ namespace WeatherApp
             {
                 endpoints.MapControllers();
             });
+
+
+            //No 'Access-Control-Allow-Origin'
+            app.UseCors("_myAllowSpecificOrigins");
+
         }
     }
 }

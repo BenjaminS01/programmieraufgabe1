@@ -10,7 +10,6 @@ namespace WeatherApp.Models
     public class Wind
     {
         [Key]
-        [ForeignKey("Place")]
         public int id { get; set; }
 
         [Range(0,360)]

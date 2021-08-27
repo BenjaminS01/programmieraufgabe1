@@ -24,6 +24,5 @@ namespace WeatherApp.Models
         public int placeId { get; set; }
 
         
-
     }
 }

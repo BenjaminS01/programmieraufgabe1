@@ -10,7 +10,6 @@ namespace WeatherApp.Models
     public class Main
     {
         [Key]
-        [ForeignKey("Place")]
         public int id { get; set; }
 
         [Range(-100, 100)]

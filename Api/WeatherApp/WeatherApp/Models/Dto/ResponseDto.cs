@@ -8,8 +8,16 @@ namespace WeatherApp.Models.Dto
     public class ResponseDto
     {
         public string name { get; set; }
+
+        public int cod { get; set; } = 200;
         
         public WindDto wind { get; set; }
+
+        public MainDto main { get; set; }
+
+        public CoordDto coord { get; set; }
+
+        public WeatherDto weather { get; set; }
 
     }
 }

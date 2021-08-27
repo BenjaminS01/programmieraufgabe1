@@ -9,7 +9,7 @@ using WeatherApp.DbContexts;
 namespace WeatherApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210827161617_migration1")]
+    [Migration("20210827182404_migration1")]
     partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
