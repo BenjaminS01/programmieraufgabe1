@@ -38,9 +38,6 @@ namespace WeatherApp.Models
         public int placeId { get; set; }
         public Place place { get; set; }
 
-        
-        
-
 
     }
 }

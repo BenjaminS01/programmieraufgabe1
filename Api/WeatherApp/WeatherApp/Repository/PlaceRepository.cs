@@ -24,7 +24,7 @@ namespace WeatherApp.Repository
 
         public async Task<PlaceDto> GetPlaceByName(string placeName)
         {
-            Place place = await _db.place.Where(x => x.name == placeName).FirstOrDefaultAsync();
+            Place place = await _db.place.Where(x => EF.Functions.Like(x.name , placeName)).FirstOrDefaultAsync();
             return _mapper.Map<PlaceDto>(place);
         }
     }

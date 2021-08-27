@@ -22,9 +22,12 @@ namespace WeatherApp.Models
 
         public virtual Wind wind { get; set; }
 
-        public ICollection<Weather> weather { get; set; }
+        
+        public int weatherId { get; set; }
 
-        public virtual ICollection<Coord> coords { get; set; }
+        public Weather weather { get; set; }
+
+        public ICollection<Coord> coords { get; set; }
 
 
     }

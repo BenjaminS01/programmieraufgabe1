@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WeatherApp.Models.Dto;
 
 namespace WeatherApp.Repository
 {
-    interface IMainRepository
+    public interface IWindRepository
     {
+        Task<WindDto> GetWindByPlaceId(int placeId);
     }
 }

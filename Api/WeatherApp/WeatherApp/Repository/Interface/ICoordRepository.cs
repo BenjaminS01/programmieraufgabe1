@@ -6,8 +6,8 @@ using WeatherApp.Models.Dto;
 
 namespace WeatherApp.Repository
 {
-    interface ICoordRepository
+    public interface ICoordRepository
     {
-        Task<CoordDto> GetCoordByPlaceid(int placeid);
+        Task<CoordDto> GetCoordByLatAndLon(int lat, int lon);
     }
 }

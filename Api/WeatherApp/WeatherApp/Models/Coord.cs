@@ -19,6 +19,11 @@ namespace WeatherApp.Models
         [Column(TypeName = "decimal(7, 4)")]
         public double lon { get; set; }
 
+        public Place place { get; set; }
+
+        public int placeId { get; set; }
+
+        
 
     }
 }

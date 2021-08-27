@@ -6,8 +6,8 @@ using WeatherApp.Models.Dto;
 
 namespace WeatherApp.Repository
 {
-    interface IWeatherRepository
+    public interface IWeatherRepository
     {
-        Task<WeatherDto> GetWeatherByPlaceid(int placeid);
+        Task<WeatherDto> GetWeatherByPlaceId(int placeId);
     }
 }

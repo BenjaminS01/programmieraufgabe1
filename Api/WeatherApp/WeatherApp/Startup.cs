@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WeatherApp.DbContexts;
+using WeatherApp.Repository;
 
 namespace WeatherApp
 {
@@ -31,6 +32,12 @@ namespace WeatherApp
         {
 
             services.AddControllers();
+            services.AddScoped<IPlaceRepository, PlaceRepository>();
+            services.AddScoped<IWindRepository, WindRepository>();
+            services.AddScoped<IWeatherRepository, WeatherRepository>();
+            services.AddScoped<ICoordRepository, CoordRepository>();
+            services.AddScoped<IMainRepository, MainRepository>();
+
 
             services.AddDbContext<ApplicationDbContext>(
             options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));

@@ -11,5 +11,7 @@ namespace WeatherApp.Models.Dto
 
         public string name { get; set; }
 
+        public Main main { get; set; }
+
     }
 }

@@ -31,21 +31,24 @@ namespace WeatherApp.DbContexts
                new Place
                {
                    id = 1,
-                   name = "Erfurt"
+                   name = "Erfurt",
+                   weatherId = 2
                }
             );
             modelBuilder.Entity<Place>().HasData(
               new Place
               {
                   id = 2,
-                  name = "Essen"
+                  name = "Essen",
+                  weatherId = 1
               }
            );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 3,
-                name = "Eisenach"
+                name = "Eisenach",
+                weatherId = 2
             }
          );
 
@@ -53,52 +56,58 @@ namespace WeatherApp.DbContexts
             new Place
             {
                 id = 4,
-                name = "Stotternheim"
+                name = "Stotternheim",
+                weatherId = 5
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 5,
-                name = "Ibiza"
+                name = "Ibiza",
+                weatherId = 5
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 6,
-                name = "Hanoi"
+                name = "Hanoi",
+                weatherId = 4
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 7,
-                name = "New York"
+                name = "New York",
+                weatherId = 1
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 8,
-                name = "Ort"
+                name = "Ort",
+                weatherId = 3
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 9,
-                name = "noch ein Ort"
+                name = "noch ein Ort",
+                weatherId = 2
             }
          );
             modelBuilder.Entity<Place>().HasData(
             new Place
             {
                 id = 10,
-                name = "irgendwo"
+                name = "irgendwo",
+                weatherId = 1
             }
          );
-
 
 
             ///////////////wind
@@ -329,8 +338,7 @@ namespace WeatherApp.DbContexts
                 id = 1,
                 description = "broken clouds",
                 icon = "02",
-                main = "Snow",
-                Placeid = 1
+                main = "Snow"
             }
             );
             modelBuilder.Entity<Weather>().HasData(
@@ -339,8 +347,7 @@ namespace WeatherApp.DbContexts
                   id = 2,
                   description = "broken clouds",
                   icon = "01",
-                  main = "Clouds",
-                  Placeid = 2
+                  main = "Clouds"
               }
            );
             modelBuilder.Entity<Weather>().HasData(
@@ -349,8 +356,7 @@ namespace WeatherApp.DbContexts
                 id = 3,
                 description = "broken clouds",
                 icon = "02",
-                main = "Clouds",
-                Placeid = 3
+                main = "Clouds"
             }
          );
 
@@ -360,8 +366,7 @@ namespace WeatherApp.DbContexts
                 id = 4,
                 description = "broken clouds",
                 icon = "03",
-                main = "Snow",
-                Placeid = 4
+                main = "Snow"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -370,8 +375,7 @@ namespace WeatherApp.DbContexts
                 id = 5,
                 description = "broken clouds",
                 icon = "02",
-                main = "Rain",
-                Placeid = 5
+                main = "Rain"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -380,8 +384,7 @@ namespace WeatherApp.DbContexts
                 id = 6,
                 description = "broken clouds",
                 icon = "01",
-                main = "Clouds",
-                Placeid = 6
+                main = "Clouds"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -390,8 +393,7 @@ namespace WeatherApp.DbContexts
                 id = 7,
                 description = "broken clouds",
                 icon = "04",
-                main = "Rain",
-                Placeid = 7
+                main = "Rain"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -400,8 +402,7 @@ namespace WeatherApp.DbContexts
                 id = 8,
                 description = "broken clouds",
                 icon = "03",
-                main = "Sun",
-                Placeid = 8
+                main = "Sun"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -410,8 +411,7 @@ namespace WeatherApp.DbContexts
                 id = 9,
                 description = "broken clouds",
                 icon = "02",
-                main = "Clouds",
-                Placeid = 9
+                main = "Clouds"
             }
          );
             modelBuilder.Entity<Weather>().HasData(
@@ -420,8 +420,7 @@ namespace WeatherApp.DbContexts
                 id = 10,
                 description = "broken clouds",
                 icon = "01",
-                main = "Clouds",
-                Placeid = 10
+                main = "Clouds"
             }
          );
 
@@ -434,7 +433,7 @@ namespace WeatherApp.DbContexts
                 id = 1,
                  lat = 101.1,
                  lon = 104.2,
-                 Placeid = 1
+                 placeId = 1
             }
             );
             modelBuilder.Entity<Coord>().HasData(
@@ -443,7 +442,7 @@ namespace WeatherApp.DbContexts
                   id = 2,
                   lat = 210.1,
                   lon = 10.2,
-                  Placeid = 2
+                  placeId = 2
               }
            );
             modelBuilder.Entity<Coord>().HasData(
@@ -452,7 +451,7 @@ namespace WeatherApp.DbContexts
                 id = 3,
                 lat = 102.1,
                 lon = 10.22,
-                Placeid = 3
+                placeId = 3
             }
          );
 
@@ -462,7 +461,7 @@ namespace WeatherApp.DbContexts
                 id = 4,
                 lat = 102.1,
                 lon = 102.2,
-                Placeid = 4
+                placeId = 4
             }
          );
             modelBuilder.Entity<Coord>().HasData(
@@ -471,7 +470,7 @@ namespace WeatherApp.DbContexts
                 id = 5,
                 lat = 110.1,
                 lon = 110.2,
-                Placeid = 5
+                placeId = 5
             }
          );
             modelBuilder.Entity<Coord>().HasData(
@@ -480,7 +479,7 @@ namespace WeatherApp.DbContexts
                 id = 6,
                 lat = 10.12,
                 lon = 141.2,
-                Placeid = 6
+                placeId = 6
             }
          );
             modelBuilder.Entity<Coord>().HasData(
@@ -489,7 +488,7 @@ namespace WeatherApp.DbContexts
                 id = 7,
                 lat = 10.1,
                 lon = 14.2,
-                Placeid = 7
+                placeId = 7
             }
          );
             modelBuilder.Entity<Coord>().HasData(
@@ -498,25 +497,25 @@ namespace WeatherApp.DbContexts
                 id = 8,
                 lat = 12.1,
                 lon = 10.2,
-                Placeid = 8
+                placeId = 8
             }
          );
             modelBuilder.Entity<Coord>().HasData(
-            new
+            new Coord
             {
                 id = 9,
                 lat = 11.1,
                 lon = 11.2,
-                Placeid = 9
+                placeId = 9
             }
          );
             modelBuilder.Entity<Coord>().HasData(
-            new
+            new Coord
             {
                 id = 10,
                 lat = 10.1,
                 lon = 10.2,
-                Placeid = 10
+                placeId = 10
             }
          );
 
