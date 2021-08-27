@@ -8,6 +8,6 @@ namespace WeatherApp.Repository
 {
     public interface IWeatherRepository
     {
-        Task<WeatherDto> GetWeatherById(int id);
+        Task<List<WeatherDto>> GetWeatherById(int id);
     }
 }

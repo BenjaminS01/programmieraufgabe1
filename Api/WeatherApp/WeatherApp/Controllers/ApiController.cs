@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using WeatherApp.Repository;
 
 namespace WeatherApp.Controllers
 {
+    [ApiController]
     [Route("/api/data")]
     public class ApiController : ControllerBase
     {
@@ -43,9 +45,9 @@ namespace WeatherApp.Controllers
             response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
             response.coord = await _coordRepository.GetCoordByPlaceId(placeDto.id);
             response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
+            
 
-            Object data = response;
-            return data;
+            return response;
         }
 
         [HttpGet]

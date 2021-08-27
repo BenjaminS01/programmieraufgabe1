@@ -31,7 +31,7 @@ namespace WeatherApp
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            
             services.AddScoped<IPlaceRepository, PlaceRepository>();
             services.AddScoped<IWindRepository, WindRepository>();
             services.AddScoped<IWeatherRepository, WeatherRepository>();
@@ -56,6 +56,8 @@ namespace WeatherApp
                     .AllowAnyHeader());
             });
 
+            services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "WeatherApp", Version = "v1" });
@@ -74,6 +76,9 @@ namespace WeatherApp
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WeatherApp v1"));
             }
 
+            //No 'Access-Control-Allow-Origin'
+            app.UseCors("_myAllowSpecificOrigins");
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -86,8 +91,7 @@ namespace WeatherApp
             });
 
 
-            //No 'Access-Control-Allow-Origin'
-            app.UseCors("_myAllowSpecificOrigins");
+
 
         }
     }

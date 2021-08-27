@@ -4,10 +4,11 @@ function abc(){
             url: "https://localhost:44380/place/"+requestedCity,
             headers: {
     'Access-Control-Allow-Credentials' : true,
-    'Access-Control-Allow-Origin': 'https://localhost:44380/place/erfurt',
+    'Access-Control-Allow-Origin': 'https://localhost:44380',
     'Access-Control-Allow-Methods':'GET',
     'Access-Control-Allow-Headers':'application/json',
-	'Content-Type': 'application/x-www-form-urlencoded'
+	'Content-Type': 'application/x-www-form-urlencoded',
+	'Accept': '*'
   },
             success: function(data) {
                 setTextfields(data);

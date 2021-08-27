@@ -22,10 +22,10 @@ namespace WeatherApp.Repository
             _mapper = mapper;
         }
 
-        public async Task<WeatherDto> GetWeatherById(int id)
+        public async Task<List<WeatherDto>> GetWeatherById(int id)
         {
-            Weather weather = await _db.weather.Where(x => x.id == id).FirstOrDefaultAsync();
-            return _mapper.Map<WeatherDto>(weather);
+            List<Weather> weather = await _db.weather.Where(x => x.id == id).ToListAsync();
+            return _mapper.Map<List<WeatherDto>>(weather);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace WeatherApp.Models.Dto
 
         public CoordDto coord { get; set; }
 
-        public WeatherDto weather { get; set; }
+        public List<WeatherDto> weather { get; set; }
 
     }
 }
