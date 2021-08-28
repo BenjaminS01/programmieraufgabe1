@@ -21,6 +21,5 @@ namespace WeatherApp.Models.Dto
 
         public double temp_min { get; set; }
 
-        public int placeId { get; set; }
     }
 }

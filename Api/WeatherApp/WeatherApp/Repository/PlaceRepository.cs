@@ -27,5 +27,11 @@ namespace WeatherApp.Repository
             Place place = await _db.place.Where(x => EF.Functions.Like(x.name , placeName)).FirstOrDefaultAsync();
             return _mapper.Map<PlaceDto>(place);
         }
+
+        public async Task<PlaceDto> GetPlaceById(int id)
+        {
+            Place place = await _db.place.Where(x => x.id == id).FirstOrDefaultAsync();
+            return _mapper.Map<PlaceDto>(place);
+        }
     }
 }

@@ -38,6 +38,8 @@ namespace WeatherApp.Controllers
         {
             ResponseDto response = new ResponseDto();
 
+
+            //TODO try Catch
             PlaceDto placeDto = await _placeRepository.GetPlaceByName(name);
             response.name = placeDto.name;
 
@@ -52,12 +54,20 @@ namespace WeatherApp.Controllers
 
         [HttpGet]
         [Route("/coord/{lat}/{lon}")]
-        public ResponseDto Get(double lat, double lon)
+        public async Task<object> Get(double lat, double lon)
         {
-            ResponseDto res = new ResponseDto();
-            res.name = "test";
+            ResponseDto response = new ResponseDto();
 
-            return res;
+            response.coord = await _coordRepository.GetCoordByLatAndLon(lat, lon);
+            PlaceDto placeDto = await _placeRepository.GetPlaceById(response.coord.placeId);
+            response.name = placeDto.name;
+            response.weather = await _weatherRepository.GetWeatherById(placeDto.weatherId);
+            response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
+            response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
+
+            return response;
+            /// +++++ Icon
+
         }
     }
 }

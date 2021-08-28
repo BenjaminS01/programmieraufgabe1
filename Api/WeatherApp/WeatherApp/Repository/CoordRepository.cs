@@ -21,9 +21,10 @@ namespace WeatherApp.Repository
             _mapper = mapper;
         }
 
-        public async Task<CoordDto> GetCoordByLatAndLon(int lat, int lon)
+        public async Task<CoordDto> GetCoordByLatAndLon(double lat, double lon)
         {
-            throw new NotImplementedException();
+            Coord coord = await _db.coord.Where(x => x.lat == lat && x.lon == lon).FirstOrDefaultAsync();
+            return _mapper.Map<CoordDto>(coord);
         }
 
         public async Task<CoordDto> GetCoordByPlaceId(int placeId)

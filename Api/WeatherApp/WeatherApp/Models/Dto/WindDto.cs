@@ -13,7 +13,5 @@ namespace WeatherApp.Models.Dto
 
         public float speed { get; set; }
 
-        public int placeId { get; set; }
-
     }
 }

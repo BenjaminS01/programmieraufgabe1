@@ -9,5 +9,8 @@ namespace WeatherApp.Repository
     public interface IPlaceRepository
     {
         Task<PlaceDto> GetPlaceByName(string placeName);
+
+        Task<PlaceDto> GetPlaceById(int id);
+
     }
 }

@@ -8,7 +8,7 @@ namespace WeatherApp.Repository
 {
     public interface ICoordRepository
     {
-        Task<CoordDto> GetCoordByLatAndLon(int lat, int lon);
+        Task<CoordDto> GetCoordByLatAndLon(double lat, double lon);
 
         Task<CoordDto> GetCoordByPlaceId(int placeId);
     }
