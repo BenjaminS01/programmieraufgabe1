@@ -16,12 +16,30 @@
 	</nav>
 
 <div class="box">
-	<h2>Stadtnamen eingeben</h2>
 
-	<div class="form-group row">
-			<input id="q" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="q">
-			<button id="start" class="btn btn-success mb-3" onclick="abc()">Stadt suchen</button>
+	<div class="btn-group btn-group-toggle" data-toggle="buttons">
+		<label class="btn btn-primary active" style="width:150px!important;" onclick="searchByPlaceName()">
+			<input type="radio" name="options" autocomplete="off" checked > Stadtname
+		</label>
+		<label class="btn btn-primary"  style="width:150px!important;" onclick="searchByLatLon()">
+			<input type="radio" name="options" autocomplete="off" > Koordinaten
+		</label>
 	</div>
+
+	<h3 id="searchLabel">Stadtname eingeben</h3>
+
+	<div class="form-group row" id="searchByPlaceName">
+			<input id="placeName" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="placeName" required>
+
+			<button id="start" class="btn btn-success mb-3" onclick="getWeatherByPlaceName()">Stadt suchen</button>
+	</div>
+
+	<div class="form-group row" id="searchByLatLon">
+			<input id="latitude" class="form-control col-sm-6"   type="search" placeholder="Längengrad"  name="latitude" required>
+			<input id="longitude" class="form-control col-sm-6"   type="search" placeholder="Breitengrad"  name="longitude" style="break-after: always!important;" required>
+			<button id="start" class="btn btn-success mb-3" onclick="getWeatherByLatLon()">Stadt suchen</button>
+	</div>
+	
 
 <div class="weather">	
 	<h3 id="city">-</h3>

@@ -29,3 +29,4 @@ function abc(){
 
         $(".weather").css("display", "block");
     }
+
