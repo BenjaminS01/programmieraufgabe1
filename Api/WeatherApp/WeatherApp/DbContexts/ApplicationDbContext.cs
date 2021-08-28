@@ -32,6 +32,7 @@ namespace WeatherApp.DbContexts
                {
                    id = 1,
                    name = "Erfurt",
+                   country = "DE",
                    weatherId = 2
                }
             );
@@ -40,6 +41,7 @@ namespace WeatherApp.DbContexts
               {
                   id = 2,
                   name = "Essen",
+                  country = "DE",
                   weatherId = 1
               }
            );
@@ -48,6 +50,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 3,
                 name = "Eisenach",
+                country = "DE",
                 weatherId = 2
             }
          );
@@ -57,6 +60,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 4,
                 name = "Stotternheim",
+                country = "DE",
                 weatherId = 3
             }
          );
@@ -65,6 +69,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 5,
                 name = "Ibiza",
+                country = "ES",
                 weatherId = 4
             }
          );
@@ -73,6 +78,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 6,
                 name = "Hanoi",
+                country = "VN",
                 weatherId = 4
             }
          );
@@ -81,6 +87,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 7,
                 name = "New York",
+                country = "US",
                 weatherId = 1
             }
          );
@@ -89,6 +96,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 8,
                 name = "Ort",
+                country = "XX",
                 weatherId = 3
             }
          );
@@ -97,6 +105,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 9,
                 name = "noch ein Ort",
+                country = "ERDE",
                 weatherId = 2
             }
          );
@@ -105,6 +114,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 10,
                 name = "irgendwo",
+                country = "MOND",
                 weatherId = 1
             }
          );
@@ -377,8 +387,8 @@ namespace WeatherApp.DbContexts
              new
             {
                 id = 1,
-                 lat = 101.1,
-                 lon = 104.2,
+                 lat = 51.0,
+                 lon = 11.0,
                  placeId = 1
             }
             );

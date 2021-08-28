@@ -9,7 +9,7 @@ using WeatherApp.DbContexts;
 namespace WeatherApp.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210828161014_migration1")]
+    [Migration("20210828212359_migration1")]
     partial class migration1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -46,8 +46,8 @@ namespace WeatherApp.Migrations
                         new
                         {
                             id = 1,
-                            lat = 101.1m,
-                            lon = 104.2m,
+                            lat = 51m,
+                            lon = 11m,
                             placeId = 1
                         },
                         new
@@ -270,6 +270,9 @@ namespace WeatherApp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("country")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("name")
                         .HasColumnType("varchar(100)");
 
@@ -286,60 +289,70 @@ namespace WeatherApp.Migrations
                         new
                         {
                             id = 1,
+                            country = "DE",
                             name = "Erfurt",
                             weatherId = 2
                         },
                         new
                         {
                             id = 2,
+                            country = "DE",
                             name = "Essen",
                             weatherId = 1
                         },
                         new
                         {
                             id = 3,
+                            country = "DE",
                             name = "Eisenach",
                             weatherId = 2
                         },
                         new
                         {
                             id = 4,
+                            country = "DE",
                             name = "Stotternheim",
                             weatherId = 3
                         },
                         new
                         {
                             id = 5,
+                            country = "ES",
                             name = "Ibiza",
                             weatherId = 4
                         },
                         new
                         {
                             id = 6,
+                            country = "VN",
                             name = "Hanoi",
                             weatherId = 4
                         },
                         new
                         {
                             id = 7,
+                            country = "US",
                             name = "New York",
                             weatherId = 1
                         },
                         new
                         {
                             id = 8,
+                            country = "XX",
                             name = "Ort",
                             weatherId = 3
                         },
                         new
                         {
                             id = 9,
+                            country = "ERDE",
                             name = "noch ein Ort",
                             weatherId = 2
                         },
                         new
                         {
                             id = 10,
+                            country = "MOND",
                             name = "irgendwo",
                             weatherId = 1
                         });

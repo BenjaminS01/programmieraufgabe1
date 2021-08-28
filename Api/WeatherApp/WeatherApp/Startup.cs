@@ -46,7 +46,7 @@ namespace WeatherApp
             services.AddSingleton(mapper);
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            //No 'Access-Control-Allow-Origin'
+            //prevent 'No Access-Control-Allow-Origin' error message
             services.AddCors(options =>
             {
                 options.AddPolicy("_myAllowSpecificOrigins",
@@ -76,7 +76,7 @@ namespace WeatherApp
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WeatherApp v1"));
             }
 
-            //No 'Access-Control-Allow-Origin'
+            //prevent 'No Access-Control-Allow-Origin' error message
             app.UseCors("_myAllowSpecificOrigins");
 
             app.UseHttpsRedirection();

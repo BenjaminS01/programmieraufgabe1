@@ -16,6 +16,7 @@ namespace WeatherApp.Models
         [Column(TypeName = "varchar(100)")]
         public string name { get; set; }
 
+        public string country { get; set; }
 
         //foreign keys
         public virtual Main main { get; set; }

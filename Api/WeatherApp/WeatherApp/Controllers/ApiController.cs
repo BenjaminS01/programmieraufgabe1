@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -39,16 +40,21 @@ namespace WeatherApp.Controllers
             ResponseDto response = new ResponseDto();
 
 
-            //TODO try Catch
-            PlaceDto placeDto = await _placeRepository.GetPlaceByName(name);
-            response.name = placeDto.name;
-
-            response.weather = await _weatherRepository.GetWeatherById(placeDto.weatherId);
-            response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
-            response.coord = await _coordRepository.GetCoordByPlaceId(placeDto.id);
-            response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
+            try
+            {
+                PlaceDto placeDto = await _placeRepository.GetPlaceByName(name);
+                response.name = placeDto.name;
+                response.country = placeDto.country;
+                response.weather = await _weatherRepository.GetWeatherById(placeDto.weatherId);
+                response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
+                response.coord = await _coordRepository.GetCoordByPlaceId(placeDto.id);
+                response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
+            }
+            catch(Exception e)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
             
-
             return response;
         }
 
@@ -57,16 +63,23 @@ namespace WeatherApp.Controllers
         public async Task<object> Get(double lat, double lon)
         {
             ResponseDto response = new ResponseDto();
+            try
+            {
+                response.coord = await _coordRepository.GetCoordByLatAndLon(lat, lon);
+                PlaceDto placeDto = await _placeRepository.GetPlaceById(response.coord.placeId);
+                response.name = placeDto.name;
+                response.country = placeDto.country;
+                response.weather = await _weatherRepository.GetWeatherById(placeDto.weatherId);
+                response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
+                response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
+            }
+            catch (Exception e)
+            {
+                return new StatusCodeResult(StatusCodes.Status500InternalServerError);
+            }
 
-            response.coord = await _coordRepository.GetCoordByLatAndLon(lat, lon);
-            PlaceDto placeDto = await _placeRepository.GetPlaceById(response.coord.placeId);
-            response.name = placeDto.name;
-            response.weather = await _weatherRepository.GetWeatherById(placeDto.weatherId);
-            response.wind = await _windRepository.GetWindByPlaceId(placeDto.id);
-            response.main = await _mainRepository.GetMainByPlaceId(placeDto.id);
 
             return response;
-            /// +++++ Icon
 
         }
     }

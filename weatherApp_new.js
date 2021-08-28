@@ -15,7 +15,7 @@ function getWeatherByPlaceName(){
             },
             error: function()
                 {
-                    alert("Datenübertragung fehlgeschlagen. Bitte überprüfen Sie Ihre Eingabe und versuchen Sie es erneut.");
+                    alert("Kein Eintrag gefunden. Bitte überprüfen Sie Ihre Eingabe.");
                 }
             });
     };
@@ -23,6 +23,7 @@ function getWeatherByPlaceName(){
     function getWeatherByLatLon(){
         var latitude=$("#latitude").val();
         var longitude=$("#longitude").val();
+
             $.ajax ({
                 url: "https://localhost:44380/coord/"+latitude+"/"+longitude,
                 headers: {
@@ -38,13 +39,13 @@ function getWeatherByPlaceName(){
                 },
                 error: function()
                     {
-                        alert("Datenübertragung fehlgeschlagen. Bitte überprüfen Sie Ihre Eingabe und versuchen Sie es erneut.");
+                        alert("Kein Eintrag gefunden. Bitte überprüfen Sie Ihre Eingabe.");
                     }
                 });
         };
 
     function setTextfields(data){
-        $("#city").html("Wetterdaten: "+data.name);
+        $("#city").html("Aktuelle Wetterlage in "+data.name+", "+data.country);
 
         $("#temperatur").html(data.main.temp + "°C");
         $("#luftdruck").html(data.main.pressure + " hPa");
@@ -66,7 +67,13 @@ function getWeatherByPlaceName(){
     };
 
    function searchByLatLon(){
+    navigator.geolocation.getCurrentPosition(function(location) {
+        $("#latitude").val(location.coords.latitude);
+        $("#longitude").val(location.coords.longitude);
+      });
         $("#searchByLatLon").css("display", "flex");
         $("#searchByPlaceName").css("display", "none");
-        $("#searchLabel").html("Längen- und Breitengrad eingeben");
+        $("#searchLabel").html("Längen- und Breitengrad Bestätigen");
     };
+
+

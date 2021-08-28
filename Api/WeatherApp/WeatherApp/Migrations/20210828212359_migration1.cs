@@ -28,6 +28,7 @@ namespace WeatherApp.Migrations
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     name = table.Column<string>(type: "varchar(100)", nullable: true),
+                    country = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     weatherId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -121,19 +122,19 @@ namespace WeatherApp.Migrations
 
             migrationBuilder.InsertData(
                 table: "place",
-                columns: new[] { "id", "name", "weatherId" },
+                columns: new[] { "id", "country", "name", "weatherId" },
                 values: new object[,]
                 {
-                    { 2, "Essen", 1 },
-                    { 7, "New York", 1 },
-                    { 10, "irgendwo", 1 },
-                    { 1, "Erfurt", 2 },
-                    { 3, "Eisenach", 2 },
-                    { 9, "noch ein Ort", 2 },
-                    { 4, "Stotternheim", 3 },
-                    { 8, "Ort", 3 },
-                    { 5, "Ibiza", 4 },
-                    { 6, "Hanoi", 4 }
+                    { 2, "DE", "Essen", 1 },
+                    { 7, "US", "New York", 1 },
+                    { 10, "MOND", "irgendwo", 1 },
+                    { 1, "DE", "Erfurt", 2 },
+                    { 3, "DE", "Eisenach", 2 },
+                    { 9, "ERDE", "noch ein Ort", 2 },
+                    { 4, "DE", "Stotternheim", 3 },
+                    { 8, "XX", "Ort", 3 },
+                    { 5, "ES", "Ibiza", 4 },
+                    { 6, "VN", "Hanoi", 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -146,7 +147,7 @@ namespace WeatherApp.Migrations
                     { 9, 11.1m, 11.2m, 9 },
                     { 3, 102.1m, 10.22m, 3 },
                     { 5, 110.1m, 110.2m, 5 },
-                    { 1, 101.1m, 104.2m, 1 },
+                    { 1, 51m, 11m, 1 },
                     { 8, 12.1m, 10.2m, 8 },
                     { 7, 10.1m, 14.2m, 7 },
                     { 6, 10.12m, 141.2m, 6 },

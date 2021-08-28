@@ -11,6 +11,8 @@ namespace WeatherApp.Models.Dto
 
         public string name { get; set; }
 
+        public string country { get; set; }
+
         public Main main { get; set; }
 
         public int weatherId { get; set; }
