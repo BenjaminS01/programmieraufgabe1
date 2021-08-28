@@ -57,7 +57,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 4,
                 name = "Stotternheim",
-                weatherId = 5
+                weatherId = 3
             }
          );
             modelBuilder.Entity<Place>().HasData(
@@ -65,7 +65,7 @@ namespace WeatherApp.DbContexts
             {
                 id = 5,
                 name = "Ibiza",
-                weatherId = 5
+                weatherId = 4
             }
          );
             modelBuilder.Entity<Place>().HasData(
@@ -336,17 +336,17 @@ namespace WeatherApp.DbContexts
             new 
             {
                 id = 1,
-                description = "broken clouds",
-                icon = "02",
-                main = "Snow"
+                description = "bewölkt",
+                icon = "https://img.icons8.com/small/16/000000/cloud.png",
+                main = "Clouds"
             }
             );
             modelBuilder.Entity<Weather>().HasData(
               new 
               {
                   id = 2,
-                  description = "broken clouds",
-                  icon = "01",
+                  description = "teilweise bewölkt",
+                  icon = "https://img.icons8.com/small/16/000000/partly-cloudy-day.png",
                   main = "Clouds"
               }
            );
@@ -354,9 +354,9 @@ namespace WeatherApp.DbContexts
             new 
             {
                 id = 3,
-                description = "broken clouds",
-                icon = "02",
-                main = "Clouds"
+                description = "schnee",
+                icon = "https://img.icons8.com/small/16/000000/snow.png",
+                main = "schnee"
             }
          );
 
@@ -364,63 +364,9 @@ namespace WeatherApp.DbContexts
             new 
             {
                 id = 4,
-                description = "broken clouds",
-                icon = "03",
-                main = "Snow"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 5,
-                description = "broken clouds",
-                icon = "02",
-                main = "Rain"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 6,
-                description = "broken clouds",
-                icon = "01",
-                main = "Clouds"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 7,
-                description = "broken clouds",
-                icon = "04",
-                main = "Rain"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 8,
-                description = "broken clouds",
-                icon = "03",
-                main = "Sun"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 9,
-                description = "broken clouds",
-                icon = "02",
-                main = "Clouds"
-            }
-         );
-            modelBuilder.Entity<Weather>().HasData(
-            new 
-            {
-                id = 10,
-                description = "broken clouds",
-                icon = "01",
-                main = "Clouds"
+                description = "sonnig",
+                icon = "https://img.icons8.com/small/16/000000/sun.png",
+                main = "sonnig"
             }
          );
 

@@ -113,16 +113,10 @@ namespace WeatherApp.Migrations
                 columns: new[] { "id", "description", "icon", "main" },
                 values: new object[,]
                 {
-                    { 1, "broken clouds", "02", "Snow" },
-                    { 2, "broken clouds", "01", "Clouds" },
-                    { 3, "broken clouds", "02", "Clouds" },
-                    { 4, "broken clouds", "03", "Snow" },
-                    { 5, "broken clouds", "02", "Rain" },
-                    { 6, "broken clouds", "01", "Clouds" },
-                    { 7, "broken clouds", "04", "Rain" },
-                    { 8, "broken clouds", "03", "Sun" },
-                    { 9, "broken clouds", "02", "Clouds" },
-                    { 10, "broken clouds", "01", "Clouds" }
+                    { 1, "bewölkt", "https://img.icons8.com/small/16/000000/cloud.png", "Clouds" },
+                    { 2, "teilweise bewölkt", "https://img.icons8.com/small/16/000000/partly-cloudy-day.png", "Clouds" },
+                    { 3, "schnee", "https://img.icons8.com/small/16/000000/snow.png", "schnee" },
+                    { 4, "sonnig", "https://img.icons8.com/small/16/000000/sun.png", "sonnig" }
                 });
 
             migrationBuilder.InsertData(
@@ -136,10 +130,10 @@ namespace WeatherApp.Migrations
                     { 1, "Erfurt", 2 },
                     { 3, "Eisenach", 2 },
                     { 9, "noch ein Ort", 2 },
+                    { 4, "Stotternheim", 3 },
                     { 8, "Ort", 3 },
-                    { 6, "Hanoi", 4 },
-                    { 4, "Stotternheim", 5 },
-                    { 5, "Ibiza", 5 }
+                    { 5, "Ibiza", 4 },
+                    { 6, "Hanoi", 4 }
                 });
 
             migrationBuilder.InsertData(
@@ -148,14 +142,14 @@ namespace WeatherApp.Migrations
                 values: new object[,]
                 {
                     { 2, 210.1m, 10.2m, 2 },
-                    { 8, 12.1m, 10.2m, 8 },
+                    { 4, 102.1m, 102.2m, 4 },
                     { 9, 11.1m, 11.2m, 9 },
                     { 3, 102.1m, 10.22m, 3 },
-                    { 4, 102.1m, 102.2m, 4 },
-                    { 1, 101.1m, 104.2m, 1 },
-                    { 6, 10.12m, 141.2m, 6 },
-                    { 7, 10.1m, 14.2m, 7 },
                     { 5, 110.1m, 110.2m, 5 },
+                    { 1, 101.1m, 104.2m, 1 },
+                    { 8, 12.1m, 10.2m, 8 },
+                    { 7, 10.1m, 14.2m, 7 },
+                    { 6, 10.12m, 141.2m, 6 },
                     { 10, 10.1m, 10.2m, 10 }
                 });
 
@@ -165,14 +159,14 @@ namespace WeatherApp.Migrations
                 values: new object[,]
                 {
                     { 10, 0m, 55, 10, 101, 22.22m, 232.11m, 20m },
-                    { 4, 0m, 55, 4, 11, 22.23m, 232.11m, 20.1m },
-                    { 6, 0m, 51, 6, 23, 22.22m, 232.11m, 22m },
+                    { 5, 0m, 55, 5, 101, 21.22m, 32.11m, 20m },
+                    { 8, 0m, 55, 8, 101, 22.22m, 34.11m, 2m },
                     { 7, 0m, 55, 7, 1, 2m, 232.11m, 20m },
                     { 3, 0m, 55, 3, 1, 2.22m, 132.11m, 20m },
-                    { 5, 0m, 55, 5, 101, 21.22m, 32.11m, 20m },
+                    { 6, 0m, 51, 6, 23, 22.22m, 232.11m, 22m },
                     { 9, 0m, 77, 9, 10, 22.22m, 232.11m, 20m },
                     { 2, 0m, 55, 2, 101, 22.22m, 232.11m, 20m },
-                    { 8, 0m, 55, 8, 101, 22.22m, 34.11m, 2m },
+                    { 4, 0m, 55, 4, 11, 22.23m, 232.11m, 20.1m },
                     { 1, 0m, 55, 1, 101, 22.22m, 23.1m, 20m }
                 });
 
@@ -181,16 +175,16 @@ namespace WeatherApp.Migrations
                 columns: new[] { "id", "deg", "placeId", "speed" },
                 values: new object[,]
                 {
-                    { 4, 43, 4, 131m },
-                    { 6, 73, 6, 11m },
+                    { 5, 63, 5, 111m },
+                    { 8, 43, 8, 31m },
                     { 3, 23, 3, 121m },
                     { 9, 4, 9, 131m },
                     { 1, 1, 1, 10m },
                     { 10, 3, 10, 31m },
                     { 7, 89, 7, 2m },
                     { 2, 11, 2, 101m },
-                    { 8, 43, 8, 31m },
-                    { 5, 63, 5, 111m }
+                    { 4, 43, 4, 131m },
+                    { 6, 73, 6, 11m }
                 });
 
             migrationBuilder.CreateIndex(

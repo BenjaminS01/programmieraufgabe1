@@ -53,7 +53,7 @@ function getWeatherByPlaceName(){
         $("#höchsteTemp").html(data.main.temp_max + "°C");
         $("#windgeschw").html(data.wind.speed + " m/s");
         $("#windr").html(data.wind.deg + "°");
-		$("#logo").html(data.weather[0].icon);
+        $("#icon").attr("src", data.weather[0].icon);
         $("#beschreibung").html(data.weather[0].description);
 
         $(".weather").css("display", "block");

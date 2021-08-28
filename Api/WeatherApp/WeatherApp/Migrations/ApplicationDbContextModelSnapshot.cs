@@ -303,13 +303,13 @@ namespace WeatherApp.Migrations
                         {
                             id = 4,
                             name = "Stotternheim",
-                            weatherId = 5
+                            weatherId = 3
                         },
                         new
                         {
                             id = 5,
                             name = "Ibiza",
-                            weatherId = 5
+                            weatherId = 4
                         },
                         new
                         {
@@ -367,72 +367,30 @@ namespace WeatherApp.Migrations
                         new
                         {
                             id = 1,
-                            description = "broken clouds",
-                            icon = "02",
-                            main = "Snow"
+                            description = "bewölkt",
+                            icon = "https://img.icons8.com/small/16/000000/cloud.png",
+                            main = "Clouds"
                         },
                         new
                         {
                             id = 2,
-                            description = "broken clouds",
-                            icon = "01",
+                            description = "teilweise bewölkt",
+                            icon = "https://img.icons8.com/small/16/000000/partly-cloudy-day.png",
                             main = "Clouds"
                         },
                         new
                         {
                             id = 3,
-                            description = "broken clouds",
-                            icon = "02",
-                            main = "Clouds"
+                            description = "schnee",
+                            icon = "https://img.icons8.com/small/16/000000/snow.png",
+                            main = "schnee"
                         },
                         new
                         {
                             id = 4,
-                            description = "broken clouds",
-                            icon = "03",
-                            main = "Snow"
-                        },
-                        new
-                        {
-                            id = 5,
-                            description = "broken clouds",
-                            icon = "02",
-                            main = "Rain"
-                        },
-                        new
-                        {
-                            id = 6,
-                            description = "broken clouds",
-                            icon = "01",
-                            main = "Clouds"
-                        },
-                        new
-                        {
-                            id = 7,
-                            description = "broken clouds",
-                            icon = "04",
-                            main = "Rain"
-                        },
-                        new
-                        {
-                            id = 8,
-                            description = "broken clouds",
-                            icon = "03",
-                            main = "Sun"
-                        },
-                        new
-                        {
-                            id = 9,
-                            description = "broken clouds",
-                            icon = "02",
-                            main = "Clouds"
-                        },
-                        new
-                        {
-                            id = 10,
-                            description = "broken clouds",
-                            icon = "01",
-                            main = "Clouds"
+                            description = "sonnig",
+                            icon = "https://img.icons8.com/small/16/000000/sun.png",
+                            main = "sonnig"
                         });
                 });
 

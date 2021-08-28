@@ -17,7 +17,7 @@ margin-top: 40px;
 
 
 td{
-	max-width: 150px;
+	width: 200px;
 }
 
 nav{
@@ -34,8 +34,6 @@ tr:hover{
 	text-transform: capitalize;
 }
 
-
-
 .form-control{
 	
 	margin-left:10px;
@@ -48,7 +46,7 @@ button{
 }
 
 .box{
-	max-width: 60%;
+	max-width: 50%;
 	margin:0 auto;
 	margin-top:70px;
 }
@@ -59,6 +57,11 @@ button{
 
 #searchByLatLon{
 	display:none;
+}
+
+img{
+	width:30px;
+	height:30px;
 }
 
 

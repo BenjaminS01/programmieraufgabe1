@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -10,87 +9,84 @@
     <title>Weather App</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
-    <body>
-      <nav class="navbar navbar-dark bg-primary">
-		<h1>Aktuelle Wetterinformationen</h1>
-	</nav>
+	<body>
+    	<nav class="navbar navbar-dark bg-primary">
+			<h1>Aktuelle Wetterinformationen</h1>
+	  	</nav>
 
-<div class="box">
+		<div class="box">
 
-	<div class="btn-group btn-group-toggle" data-toggle="buttons">
-		<label class="btn btn-primary active" style="width:150px!important;" onclick="searchByPlaceName()">
-			<input type="radio" name="options" autocomplete="off" checked > Stadtname
-		</label>
-		<label class="btn btn-primary"  style="width:150px!important;" onclick="searchByLatLon()">
-			<input type="radio" name="options" autocomplete="off" > Koordinaten
-		</label>
-	</div>
+			<div class="btn-group btn-group-toggle" data-toggle="buttons">
+				<label class="btn btn-primary active" style="width:150px!important;" onclick="searchByPlaceName()">
+					<input type="radio" name="options" autocomplete="off" checked > Stadtname
+				</label>
+				<label class="btn btn-primary"  style="width:150px!important;" onclick="searchByLatLon()">
+					<input type="radio" name="options" autocomplete="off" > Koordinaten
+				</label>
+			</div>
 
-	<h3 id="searchLabel">Stadtname eingeben</h3>
+			<h3 id="searchLabel">Stadtname eingeben</h3>
 
-	<div class="form-group row" id="searchByPlaceName">
-			<input id="placeName" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="placeName" required>
+			<div class="form-group row" id="searchByPlaceName">
+				<input id="placeName" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="placeName" required>
+				<button id="start" class="btn btn-success mb-3" onclick="getWeatherByPlaceName()">Stadt suchen</button>
+			</div>
 
-			<button id="start" class="btn btn-success mb-3" onclick="getWeatherByPlaceName()">Stadt suchen</button>
-	</div>
-
-	<div class="form-group row" id="searchByLatLon">
-			<input id="latitude" class="form-control col-sm-6"   type="search" placeholder="Längengrad"  name="latitude" required>
-			<input id="longitude" class="form-control col-sm-6"   type="search" placeholder="Breitengrad"  name="longitude" style="break-after: always!important;" required>
-			<button id="start" class="btn btn-success mb-3" onclick="getWeatherByLatLon()">Stadt suchen</button>
-	</div>
+			<div class="form-group row" id="searchByLatLon">
+				<input id="latitude" class="form-control col-sm-6"   type="search" placeholder="Längengrad"  name="latitude" required>
+				<input id="longitude" class="form-control col-sm-6"   type="search" placeholder="Breitengrad"  name="longitude" style="break-after: always!important;" required>
+				<button id="start" class="btn btn-success mb-3" onclick="getWeatherByLatLon()">Stadt suchen</button>
+			</div>
 	
+			<div class="weather">	
 
-<div class="weather">	
-	<h3 id="city">-</h3>
+				<h3 id="city">-</h3>
 
+				<table class="table">
+  				<tbody>
+    				<tr>
+      					<td >Temperatur:</td>
+      					<td id="temperatur"></td>
+    				</tr>
+					<tr>
+						<td >Luftdruck</td>
+						<td id="luftdruck"></td>
+	  				</tr>
+	  				<tr>
+						<td>Feuchtigkeit:</td>
+						<td id="feuchtigkeit"></td></td>
+	  				</tr>
+	  				<tr>
+						<td>Geringste Temperatur:</td>
+						<td id="geringsteTemp"></td>
+	  				</tr>
+	  				<tr>
+						<td>Höchste Temperatur</td>
+						<td id="höchsteTemp"></td>
+	  				</tr>
+	  				<tr>
+						<td>Windgeschwindigkeit</td>
+						<td id="windgeschw"></td>
+	  				</tr>
+	  				<tr>
+						<td>Windrichtung</td>
+						<td id="windr"></td>
+	  				</tr>
+	  				<tr>
+						<td><img id="icon" src="#"/></td>
+						<td id="beschreibung"></td>
+	  				</tr>
+  				</tbody>
+				</table>
 
-<table class="table">
-  
-  <tbody>
-    <tr>
-      <td >Temperatur:</td>
-      <td id="temperatur"></td>
-    </tr>
-	<tr>
-		<td >Luftdruck</td>
-		<td id="luftdruck"></td>
-	  </tr>
-	  <tr>
-		<td>Feuchtigkeit:</td>
-		<td id="feuchtigkeit"></td></td>
-	  </tr>
-	  <tr>
-		<td>Geringste Temperatur:</td>
-		<td id="geringsteTemp"></td>
-	  </tr>
-	  <tr>
-		<td>Höchste Temperatur</td>
-		<td id="höchsteTemp"></td>
-	  </tr>
-	  <tr>
-		<td>Windgeschwindigkeit</td>
-		<td id="windgeschw"></td>
-	  </tr>
-	  <tr>
-		<td>Windrichtung</td>
-		<td id="windr"></td>
-	  </tr>
-	  <tr>
-		<td id="logo"></td>
-		<td id="beschreibung"></td>
-	  </tr>
-  </tbody>
-</table>
-</div>
+			</div>
 
-</div>	
-
-</div>
+		</div>	
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	  <script src="weatherApp_new.js"></script>
 
     </body>
+
 </html>
