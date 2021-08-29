@@ -31,7 +31,6 @@ tr:hover{
 .weather h3{
 	margin-top:30px;
 	margin-bottom:30px;
-	text-transform: capitalize;
 }
 
 .form-control{
