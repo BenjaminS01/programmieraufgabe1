@@ -51,9 +51,9 @@ namespace WeatherApp.Repository
 
 
 
-            // attempt 3: calculate the distance between the points and the centre of a square
+            /////// attempt 3: calculate the distance between the points and the centre of a square
 
-            const int distance = 10; // in degrees
+            const int distance = 10; // max deviation between the point and the centre of the square (in degrees)
 
             Coord coord = await _db.coord.Where(x => lon < x.lon + distance && lon > x.lon - distance &&
             lat < x.lat + distance && lat > x.lat - distance).FirstOrDefaultAsync();

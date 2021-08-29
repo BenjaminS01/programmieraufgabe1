@@ -11,7 +11,6 @@ using WeatherApp.Repository;
 namespace WeatherApp.Controllers
 {
     [ApiController]
-    [Route("/api/data")]
     public class ApiController : ControllerBase
     {
 
@@ -37,8 +36,8 @@ namespace WeatherApp.Controllers
         [Route("/place/{name}")]
         public async Task<object> Get(string name)
         {
-            ResponseDto response = new ResponseDto();
 
+            ResponseDto response = new ResponseDto();
 
             try
             {
@@ -57,6 +56,7 @@ namespace WeatherApp.Controllers
             
             return response;
         }
+
 
         [HttpGet]
         [Route("/coord/{lat}/{lon}")]

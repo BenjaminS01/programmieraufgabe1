@@ -1,4 +1,6 @@
 function getWeatherByPlaceName(){
+
+    $('#loaderWeather').show();
     var requestedCity=$("#placeName").val();
         $.ajax ({
             url: "https://localhost:44380/place/"+requestedCity,
@@ -11,20 +13,24 @@ function getWeatherByPlaceName(){
 	            'Accept': '*'
             },
             success: function(data) {
+                $('#loaderWeather').hide();
                 setTextfields(data);
             },
             error: function()
                 {
+                    $('#loaderWeather').hide();
                     alert("Kein Eintrag gefunden. Bitte überprüfen Sie Ihre Eingabe.");
                 }
             });
     };
 
     function getWeatherByLatLon(){
+        $('#loaderWeather').show();
         var latitude=$("#latitude").val();
         var longitude=$("#longitude").val();
 
             $.ajax ({
+                
                 url: "https://localhost:44380/coord/"+latitude+"/"+longitude,
                 headers: {
                     'Access-Control-Allow-Credentials' : true,
@@ -35,10 +41,13 @@ function getWeatherByPlaceName(){
                     'Accept': '*'
                 },
                 success: function(data) {
+                    $('#loaderWeather').hide();
                     setTextfields(data);
                 },
+                
                 error: function()
                     {
+                        $('#loaderWeather').hide();
                         alert("Kein Eintrag gefunden. Bitte überprüfen Sie Ihre Eingabe.");
                     }
                 });
@@ -67,10 +76,23 @@ function getWeatherByPlaceName(){
     };
 
    function searchByLatLon(){
+    
+    $('#startSearchByCoord').hide();
+    $('#loaderCoord').show();
+    
     navigator.geolocation.getCurrentPosition(function(location) {
+        
         $("#latitude").val(location.coords.latitude);
         $("#longitude").val(location.coords.longitude);
-      });
+        $('#loaderCoord').hide();
+        $('#startSearchByCoord').show();
+        
+      },function(positionError) {
+        alert("Ortung fehlgeschlagen");
+        $('#loaderCoord').hide();
+        $('#startSearchByCoord').show();
+    });
+    
         $("#searchByLatLon").css("display", "flex");
         $("#searchByPlaceName").css("display", "none");
         $("#searchLabel").html("Längen- und Breitengrad Bestätigen");

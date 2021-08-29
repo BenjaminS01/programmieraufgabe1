@@ -26,22 +26,25 @@
 				</label>
 				<label class="btn btn-primary"  style="width:150px!important;" onclick="searchByLatLon()">
 					<input type="radio" name="options" autocomplete="off" > Koordinaten
-				</label>
+				</label>				
 			</div>
 
 			<h3 id="searchLabel">Stadtnamen eingeben</h3>
 
 			<div class="form-group row" id="searchByPlaceName">
 				<input id="placeName" class="form-control col-sm-6"  type="search" placeholder="Stadtname"  name="placeName" required>
-				<button id="start" class="btn btn-success mb-3" onclick="getWeatherByPlaceName()">Stadt suchen</button>
+				<button class="btn btn-success mb-3" onclick="getWeatherByPlaceName()">Stadt suchen</button>
 			</div>
 
 			<div class="form-group row" id="searchByLatLon">
 				<input id="latitude" class="form-control col-sm-6"   type="search" placeholder="Längengrad"  name="latitude" required>
 				<input id="longitude" class="form-control col-sm-6"   type="search" placeholder="Breitengrad"  name="longitude" style="break-after: always!important;" required>
-				<button id="start" class="btn btn-success mb-3" onclick="getWeatherByLatLon()">Stadt suchen</button>
+				<button id="startSearchByCoord" class="btn btn-success mb-3" onclick="getWeatherByLatLon()">Stadt suchen</button>
+				<div id="loaderCoord"></div>
 			</div>
 	
+			<div id="loaderWeather"></div> 
+
 			<div class="weather">	
 
 				<h3 id="city">-</h3>
@@ -53,7 +56,7 @@
       					<td id="temperatur"></td>
     				</tr>
 					<tr>
-						<td >Luftdruck</td>
+						<td >Luftdruck:</td>
 						<td id="luftdruck"></td>
 	  				</tr>
 	  				<tr>
@@ -65,15 +68,15 @@
 						<td id="geringsteTemp"></td>
 	  				</tr>
 	  				<tr>
-						<td>Höchste Temperatur</td>
+						<td>Höchste Temperatur:</td>
 						<td id="höchsteTemp"></td>
 	  				</tr>
 	  				<tr>
-						<td>Windgeschwindigkeit</td>
+						<td>Windgeschwindigkeit:</td>
 						<td id="windgeschw"></td>
 	  				</tr>
 	  				<tr>
-						<td>Windrichtung</td>
+						<td>Windrichtung:</td>
 						<td id="windr"></td>
 	  				</tr>
 	  				<tr>
